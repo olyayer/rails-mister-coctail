@@ -1,0 +1,11 @@
+<h2>Create a cocktail</h2>
+
+<%= simple_form_for @cocktail do |f| %>
+ <%= f.error_notification %>
+  <%= f.input :name %>
+
+
+  <%= f.submit "add a cocktail"  class: "btn btn-primary btn-default" %>
+
+<% end %>
+

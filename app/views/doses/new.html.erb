@@ -1,0 +1,8 @@
+<%= simple_form_for @dose do |f| %>
+  <%= f.input :description %>
+  <%= f.association :cocktails %>
+  <%= f.association :ingredients %>
+
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+
+<% end %>

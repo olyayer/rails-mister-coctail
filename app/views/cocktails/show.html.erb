@@ -1,19 +1,26 @@
 <!-- cocktails/id/doses/new -->
-<h3><%= @cocktail.name  %></h3>
-<p>
-  <%= link_to "Add an inredients", new_coctail_dose_path(@cocktail)   %>
-</p>
+<div style="max-width: 700px; margin: 0 auto;">
 
-<ul>
+  <h3><%= @cocktail.name  %></h3>
+  <p>
+    <%= link_to "Add inredients", new_cocktail_dose_path(@cocktail)   %>
+  </p>
 
-  <% @cocktail.doses.each do |dose| %>
+  <ul>
 
-    <li> <%= dose.ingredient.name %>: <%= dose.description %>
-      <%= link_to "Delete", dose_path(dose), method: delete class: "btn btn-danger btn-default" %>
+    <% @cocktail.doses.each do |dose| %>
 
-    </li>
+      <li> <%= dose.ingredient.name %>: <%= dose.description %>
+        <%= link_to "Delete", dose_path(dose), method: :delete, class: "btn btn-danger btn-default" %>
 
-  <% end %>
+      </li>
+
+    <% end %>
 
 
-</ul>
+  </ul>
+
+
+  <%= link_to 'Back', cocktails_path %>
+
+</div>

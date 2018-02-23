@@ -1,4 +1,18 @@
-<h2>Cocktails</h2>
+<div style="max-width: 700px; margin: 0 auto;">
 
-  <%= render @cocktails %>
+  <h2>Cocktails</h2>
+  <div class="container">
+    <div class="row">
 
+
+
+       <%= render @cocktails %>
+
+
+
+
+
+  </div>
+  <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-primary btn-default" %>
+
+</div>

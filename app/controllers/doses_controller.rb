@@ -2,8 +2,6 @@ class DosesController < ApplicationController
 before_action :set_cocktail, only: [:new, :create]
 before_action :set_dose, only: [:destroy]
 
-
-
   def new
     @dose = Dose.new
 
@@ -23,10 +21,9 @@ before_action :set_dose, only: [:destroy]
   def destroy
     @cocktail = @dose.cocktail
     @dose.destroy
+    redirect_to @cocktail
 
   end
-
-
 
   private
 
@@ -40,12 +37,8 @@ before_action :set_dose, only: [:destroy]
 
   end
 
-
   def dose_params
     params.require(:dose).permit(:description, :ingredient_id)
   end
-
-
-
 
 end

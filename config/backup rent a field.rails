@@ -1,0 +1,37 @@
+<h3>User profile and bookings</h3>
+
+  <div class="card-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('homepage-img.png') %>);">
+
+    <div class="card-category"><%= current_user.email %></div>
+  </div>
+
+
+<div class="container" id="user-bookings">
+    <div class="row">
+      <% current_user.bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card__img bookings-list" style="background-image: url('<%= booking.field.photo %>')">
+          </div>
+
+          <div class="card">
+            <ul>
+              <li> line 1 <%= booking.field.name %> </li>
+              <li> line 1 <%= booking.date %> </li>
+              <li> line 1 <%= booking.starting_time.strftime("%I:%M%p") %> </li>
+              <li> line 1 <%= booking.ending_time.strftime("%I:%M%p") %> </li>
+            </ul>
+            <br>
+
+            <%= link_to "Delete booking", field_booking_path(booking.field, booking), method: :delete %>
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+   <div>
+    <%= link_to 'Back', root_path %>
+  </div>

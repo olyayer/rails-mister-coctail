@@ -25,3 +25,10 @@ Cocktail.create(name: "Gin Tonic")
 Cocktail.create(name: "Margarita")
 Cocktail.create(name: "Pina Colada")
 Cocktail.create(name: "White Russian")
+
+
+
+
+
+
+
